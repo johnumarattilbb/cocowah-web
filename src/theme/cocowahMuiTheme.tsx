@@ -83,52 +83,6 @@ const cocowahTheme = createTheme({
         }),
       },
     },
-    MuiDrawer: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: colorPalette.gray_050,
-          padding: '40px 24px',
-          '&.drawer280': {
-            width: '17.5rem !important', // Equivalent to 280px when base font size is 16px
-          },
-          '&.drawer40': {
-            width: '26.25rem !important', // Equivalent to 420px when base font size is 16px
-          },
-        },
-        root: {
-          '&.drawer280': {
-            width: '17.5rem', // Equivalent to 280px when base font size is 16px
-          },
-          '&.drawer40': {
-            width: '26.25rem', // Equivalent to 420px when base font size is 16px
-          },
-        },
-      },
-    },
-    
-    MuiListItemText: {
-      styleOverrides: {
-        root: {
-          fontFamily: 'Kadwa, sans-serif',
-          fontSize: '1.5rem',
-          color: colorPalette.black,
-          display: '-webkit-box !important',
-        },
-        primary: {
-          fontFamily: 'Kadwa, sans-serif',
-          fontSize: '1.5rem',
-          color: colorPalette.black,
-          display: '-webkit-box !important',
-        },
-
-        secondary: {
-          fontFamily: 'Kadwa, sans-serif',
-          fontSize: '1rem',
-          color: colorPalette.black,
-          display: '-webkit-box !important',
-        },
-      },
-    },
     MuiButtonGroup: {
       styleOverrides: {
         root: {
@@ -163,7 +117,6 @@ const cocowahTheme = createTheme({
     //     }
     //   }
     // },
-    MuiAccordionSummary: { styleOverrides: { root: { alignItems: 'center', boxShadow: 'none' }, }, },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -184,68 +137,6 @@ const cocowahTheme = createTheme({
              // Define your other Amber variant color
             // Add any additional hover styles here
           },
-        },
-      },
-    },
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          height: '1.5rem',
-          padding: '0',
-          borderRadius: '0.2rem',
-          border: '0',
-          backgroundColor: 'transparent',
-          '&.merchant-section': {
-            borderColor: colorPalette.Amber_500,
-          },
-          '&.merchant-shelf': {
-            borderColor: colorPalette.Amber_500,
-          },
-          '&.merchant-box': {
-            borderColor: colorPalette.Amber_500,
-          },
-          '&.income-section': {
-            borderColor: colorPalette.Blue_500,
-          },
-          '&.income-shelf': {
-            borderColor: colorPalette.Blue_500,
-          },
-          '&.income-box': {
-            borderColor: colorPalette.Blue_500,
-          },
-          '&.expense-section': {
-            borderColor: colorPalette.Orange_500,
-          },
-          '&.expense-shelf': {
-            borderColor: colorPalette.Orange_500,
-          },
-          '&.expense-box': {
-            borderColor: colorPalette.Orange_500,
-          },
-        },
-      },
-    },
-    MuiListItem: {
-      styleOverrides: {
-        root: {
-          '&.active.column-tree-list': {
-            background: '#ededed',
-            width: '16em !important',
-          },
-          '&.column-tree-list': {
-            width: '16em !important',
-          },
-          '&.nav-item': {
-            opacity: 0.4,
-            transition: 'opacity 0.3s',
-            '&:hover': {
-              opacity: 0.8,
-            },
-          },
-          '&.nav-item.active': {
-            opacity: 1,
-          },
-          
         },
       },
     },

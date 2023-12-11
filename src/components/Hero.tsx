@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Typography, Container, Stack, TextField } from '@mui/material';
+import { Box, Button, Chip, Typography, Container, Stack, TextField } from '@mui/material';
 import { openCoins, joinWaitlist } from '../services/handyServices';
 
 const Hero = () => {
@@ -13,10 +13,10 @@ const Hero = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            if (scrollY >= 0) {
-                if (!animateCard1) setAnimateCard1(false);
-                if (!animateCard2) setAnimateCard2(false);
-                if (!animateDetails) setAnimateDetails(false);
+            if (scrollY >= 8) {
+                if (!animateCard1) setAnimateCard1(true);
+                if (!animateCard2) setAnimateCard2(true);
+                if (!animateDetails) setAnimateDetails(true);
             } else {
                 setAnimateCard1(false);
                 setAnimateCard2(false);
@@ -61,9 +61,12 @@ const Hero = () => {
                     Master your finances
                 </Typography>
             </Stack>
-            <Typography maxWidth='580px' margin={'auto'} variant="body2" textAlign='center' paragraph marginBottom={4}>
-                Dive into precise financial management with Cocowah Coins. From single grocery items to major investments, track every expense with unparalleled detail and control.
-            </Typography>
+            <Stack direction={'column'} spacing={1} justifyContent="center" alignItems="center" marginBottom={4}>
+                <Chip label="New" color="secondary" />
+                <Typography maxWidth='720px' textAlign={'center'} variant="body2">
+                Step into the future of personal finance with Cocowah Coins – your go-to solution for managing daily expenses, from grocery receipts to leisure splurges. Launching mid-2024 – sign up now to become an early bird and gain early access to a world of smarter spending. Join us in redefining personal finance! 🌟📊🚀
+                </Typography>
+            </Stack>
             <Box sx={{ '& > button': { margin: 1 } }}>
                 {!isSuccess ? (
                     <>
@@ -89,7 +92,7 @@ const Hero = () => {
                 <Stack direction={'column'} gap={2}>
                     <Stack
                         sx={{
-                            opacity: animateCard1 ? 1 : 1,
+                            opacity: animateCard1 ? 1 : 0.2,
                             transform: animateCard1 ? 'translateY(0) rotate(0deg)' : 'translateX(50px) rotate(-4deg)',
                             transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
                             // Additional styles can be added here
@@ -99,7 +102,7 @@ const Hero = () => {
                     </Stack>
                     <Stack
                         sx={{
-                            opacity: animateCard2 ? 1 : 1,
+                            opacity: animateCard2 ? 1 : 0.2,
                             transform: animateCard2 ? 'translateY(0) rotate(0deg)' : 'translateX(50px) rotate(4deg)',
                             transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
                             // Additional styles can be added here
@@ -109,8 +112,8 @@ const Hero = () => {
                     </Stack>
                 </Stack>
                 <Stack
-                    sx={{                        
-                        opacity: animateCard2 ? 1 : 1,
+                    sx={{
+                        opacity: animateCard2 ? 1 : 0.2,
                         transform: animateCard2 ? 'translateY(0)  rotate(0deg)' : 'translateX(80px)  rotate(4deg)',
                         transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
                         // Additional styles can be added here
