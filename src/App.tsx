@@ -51,13 +51,13 @@ function App() {
 
   const showcase1 = {
     title: "Nothing new, it’s old practices",
-    desc: "Today, we're bringing the power of seamless financial management to your fingertips. Our app bridges the gap between old practices of writing down each of income, expense to plan for the financial health. Our app fill in modern needs, ensuring you have a comprehensive view of your monetary movements at all times",
+    desc: "Today, we're bringing the power of seamless financial management to your fingertips. Our app bridges the gap between old practices of writing down each of income, expense to plan for the financial health. Our app fill in modern needs, ensuring you have a comprehensive view of your monetary movements at all times.",
     imgUrl: "https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21253994&authkey=%21ALRR9sleh4puwlo&width=1157&height=794" // Replace with your actual image path
   };
 
   const showcase2 = {
     title: "Granular Control Makes You Limitless",
-    desc: "Categorizing your categories, subcategories, and items at three levels allows you to organize, manage, and analyze your expenses and income in unparalleled detail. Experience financial clarity and empowerment like never before",
+    desc: "Categorize every coin into sections, shelves, and boxes at three levels allows you to organize, manage, and analyze your expenses and income in unparalleled detail. Experience financial clarity and empowerment like never before.",
     imgUrl: "https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21253993&authkey=%21ABrMIDBeyNietDQ&width=6100&height=4067" // Replace with your actual image path
   };
 
@@ -91,7 +91,7 @@ function App() {
                 top: 0,
                 backgroundColor: scrolled ? colorPalette.Amber_200 : 'transparent',
                 zIndex: 1000,
-                padding: scrolled ? '8px 8px' : '32px 8px',
+                padding: scrolled ? '8px 8px' : '8px 8px',
                 transition: 'background-color 0.3s, padding 0.3s'
               }}
             >

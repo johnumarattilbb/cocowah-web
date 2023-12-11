@@ -4,32 +4,33 @@ import { openCoins, joinWaitlist } from '../services/handyServices';
 
 const Hero = () => {
     const [scrolled, setScrolled] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false);
     const [email, setEmail] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
+    const [animateCard1, setAnimateCard1] = useState(false);
+    const [animateCard2, setAnimateCard2] = useState(false);
+    const [animateDetails, setAnimateDetails] = useState(false);
 
     useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            if (scrollY >= 0) {
+                if (!animateCard1) setAnimateCard1(false);
+                if (!animateCard2) setAnimateCard2(false);
+                if (!animateDetails) setAnimateDetails(false);
+            } else {
+                setAnimateCard1(false);
+                setAnimateCard2(false);
+                setAnimateDetails(false);
+            }
+        };
+
         window.addEventListener('scroll', handleScroll);
-        // Check local storage on mount
         const joinedCocowahWaitlist = localStorage.getItem('joinedCocowahWaitlist') === 'true';
         setIsSuccess(joinedCocowahWaitlist);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [scrolled]);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [animateCard1, animateCard2, animateDetails]);
 
-    const handleScroll = () => {
-        if (window.scrollY > 0 && !scrolled) {
-            setScrolled(true);
-        } else if (window.scrollY === 0 && scrolled) {
-            setScrolled(false);
-        }
-    };
-
-    const handleImageLoad = () => {
-        setImageLoaded(true);
-    };
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(event.target.value);
@@ -84,26 +85,40 @@ const Hero = () => {
                     </Typography>
                 )}
             </Box>
-            <Box
-                sx={{
-                    width: scrolled ? '100%' : '140%',
-                    height: 'auto',
-                    position: 'relative',
-                    marginTop: '16px',
-                    top: scrolled ? '0px' : '0px',
-                    opacity: imageLoaded ? 1 : 0, // Use imageLoaded state for opacity transition
-                    transition: 'opacity 1s ease-out, top 0.5s ease-out, width 0.5s ease-out',
-                    alignSelf: 'center',
-                    minHeight: '500px', // Set an initial height for the image container
-                }}
-            >
-                <img
-                    style={{ width: '100%', height: 'auto' }}
-                    src="https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21253989&authkey=%21ALLFb4K9blgBahU&width=1390&height=849"
-                    alt="Descriptive Alt Text"
-                    onLoad={handleImageLoad} // Handle image load
-                />
-            </Box>
+            <Stack direction={{ xs: 'column', md: 'row' }} gap={2} marginTop={4}>
+                <Stack direction={'column'} gap={2}>
+                    <Stack
+                        sx={{
+                            opacity: animateCard1 ? 1 : 1,
+                            transform: animateCard1 ? 'translateY(0) rotate(0deg)' : 'translateX(50px) rotate(-4deg)',
+                            transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+                            // Additional styles can be added here
+                        }}
+                    >
+                        <img src="https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21254014&authkey=%21AN5W9WQ3NRgvwac&width=364&height=116" alt="Card 1" />
+                    </Stack>
+                    <Stack
+                        sx={{
+                            opacity: animateCard2 ? 1 : 1,
+                            transform: animateCard2 ? 'translateY(0) rotate(0deg)' : 'translateX(50px) rotate(4deg)',
+                            transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+                            // Additional styles can be added here
+                        }}
+                    >
+                        <img src="https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21254015&authkey=%21AIb6Hfq1OHuj-Iw&width=362&height=112" alt="Card 2" />
+                    </Stack>
+                </Stack>
+                <Stack
+                    sx={{                        
+                        opacity: animateCard2 ? 1 : 1,
+                        transform: animateCard2 ? 'translateY(0)  rotate(0deg)' : 'translateX(80px)  rotate(4deg)',
+                        transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+                        // Additional styles can be added here
+                    }}
+                >
+                    <img src="https://onedrive.live.com/embed?resid=1656BB0C87C6BA8%21254016&authkey=%21AGdqI58w319aMmU&width=775&height=792" alt="Card Details" />
+                </Stack>
+            </Stack>
         </Box>
     );
 };

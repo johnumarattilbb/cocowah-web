@@ -11,7 +11,7 @@ const Footer = () => {
               About Us
             </Typography>
             <Typography variant="body2" color="inherit">
-              Cocowah is a leading provider of innovative scanning solutions. Our mission is to simplify your workflow with cutting-edge technology.
+              Coins by Cocowah is a cutting-edge financial tool offering detailed transaction tracking, intuitive budgeting, and smart spending insights, empowering users to master their personal finances with ease.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
