@@ -1,5 +1,6 @@
 
-Welcome to **Cocowah**, a vibrant and interactive web project designed with React.
+# Welcome to **Cocowah**
+## A vibrant and interactive web project designed with React.
 ![enter image description here](https://onedrive.live.com/embed?resid=1656BB0C87C6BA8!254017&authkey=!AG2ulSzeo1iuB1w&width=1993&height=1161)
 ## Getting Started with Cocowah
 
